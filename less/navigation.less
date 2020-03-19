@@ -1,1 +1,37 @@
 // Navigation Styles here
+.topPage {
+  border-bottom: 2px dashed @navigation-border;
+
+  .navBar {
+    @media @phone {
+      .flex(column, center);
+      align-items: center;
+    }
+    width: 100%;
+    padding: 2% 4%;
+    .flex(row, space-between);
+    align-items: baseline;
+
+    h1 {
+      @media @phone {
+        font-size: 3.2rem;
+        padding: 2% 0;
+      } // @phone
+    } // h1
+
+    nav {
+      width: 45%;
+      .flex(row, space-around);
+      @media @phone{
+          width:100%;
+      }
+
+      a {
+        color: @shark;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+        text-decoration: none;
+      } // a
+    } // nav
+  } // .navBar
+} //.topPage
