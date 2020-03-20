@@ -1,3 +1,23 @@
+@keyframes boom {
+  0% {
+    color: yellow;
+    background: orange;
+    box-shadow: 3px 3px red;
+    border-radius: 10px;
+  }
+  50% {
+    color: orange;
+    background: red;
+    box-shadow: 3px 3px yellow;
+    border-radius: 5px;
+  }
+  100% {
+    color: red;
+    background: yellow;
+    box-shadow: 3px 3px orange;
+    border-radius: 10px;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -144,20 +164,40 @@ h5 {
   font-family: 'Indie Flower', cursive;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 5.5vw;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 7vw;
+  }
 }
 h2 {
-  font-size: 3.2rem;
+  font-size: 4.2vw;
   padding-bottom: 10px;
 }
+@media (max-width: 500px) {
+  h2 {
+    font-size: 7vw;
+  }
+}
 h4 {
-  font-size: 2.5rem;
+  font-size: 3.3vw;
   padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  h4 {
+    font-size: 5.5vw;
+  }
 }
 p {
   line-height: 1.5;
-  font-size: 1.6rem;
+  font-size: 2.1vw;
   padding-bottom: 10px;
+}
+@media (max-width: 500px) {
+  p {
+    font-size: 3.5vw;
+  }
 }
 img {
   max-width: 100%;
@@ -168,7 +208,7 @@ img {
   padding: 0 4%;
 }
 .topPage {
-  border-bottom: 2px dashed #C0C0C0;
+  border-bottom: 2px dashed #c0c0c0;
 }
 .topPage .navBar {
   width: 100%;
@@ -188,7 +228,6 @@ img {
 }
 @media (max-width: 500px) {
   .topPage .navBar h1 {
-    font-size: 3.2rem;
     padding: 2% 0;
   }
 }
@@ -206,26 +245,50 @@ img {
 .topPage .navBar nav a {
   color: #212529;
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.1vw;
   text-decoration: none;
+}
+@media (max-width: 500px) {
+  .topPage .navBar nav a {
+    font-size: 3.5vw;
+  }
+}
+.topPage .navBar nav a:hover {
+  animation-duration: 0.1s;
+  animation-fill-mode: alternate;
+  animation-iteration-count: infinite;
+  animation-name: boom;
+  padding: 1%;
+}
+@media (max-width: 800px) {
+  .topPage .navBar nav a:hover {
+    animation-name: none;
+    transition: none;
+    padding: 0;
+  }
 }
 .footer {
   width: 100%;
   border-top: 2px dashed silver;
-  background: #FFEBCD;
+  background: #ffebcd;
 }
 .footer p {
   text-align: center;
   color: #212529;
-  font-size: 1.6rem;
-  padding: 20px;
+  font-size: 2.1vw;
+  padding: 2%;
+}
+@media (max-width: 500px) {
+  .footer p {
+    font-size: 3.5vw;
+  }
 }
 header {
   width: 100%;
   padding: 0 4% 2%;
-  border-bottom: 2px dashed #C0C0C0;
 }
 header img {
+  width: 100%;
   padding-bottom: 2%;
 }
 @media (max-width: 500px) {
@@ -233,8 +296,11 @@ header img {
     padding-bottom: 3%;
   }
 }
+.home {
+  border-top: 2px dashed #c0c0c0;
+}
 .home .content-section {
-  margin: 30px 0;
+  padding: 4% 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -255,14 +321,16 @@ header img {
 @media (max-width: 500px) {
   .home .content-section .img-content {
     width: 100%;
+    padding: 0;
   }
 }
 .home .content-section .img-content img {
+  width: 100%;
   border-radius: 10px;
 }
 .home .inverse-content {
-  padding-bottom: 30px;
-  border-bottom: 2px dashed #C0C0C0;
+  padding: 4% 0;
+  border-bottom: 2px dashed #c0c0c0;
 }
 @media (max-width: 500px) {
   .home .inverse-content {
@@ -272,28 +340,47 @@ header img {
   }
 }
 .home .inverse-content .text-content {
+  width: 48%;
   padding-left: 1%;
   padding-right: 0;
 }
+@media (max-width: 500px) {
+  .home .inverse-content .text-content {
+    width: 100%;
+  }
+}
 .home .inverse-content .img-content {
+  width: 48%;
   padding-right: 1%;
   padding-left: 0;
 }
+@media (max-width: 500px) {
+  .home .inverse-content .img-content {
+    width: 100%;
+    padding: 0;
+  }
+}
+.home .inverse-content .img-content img {
+  width: 100%;
+}
 .home .content-destination {
-  width: 75%;
-  margin: 0 auto 30px;
+  width: 100%;
+  padding: 4% 12% 1%;
+  margin-bottom: 4%;
 }
 @media (max-width: 500px) {
   .home .content-destination {
     width: 100%;
+    padding: 4% 0 1%;
   }
 }
 .home .content-destination img {
+  width: 100%;
   border-radius: 10px;
 }
 .home .content-pick {
-  padding-top: 30px;
-  border-top: 2px dashed #C0C0C0;
+  padding-top: 4%;
+  border-top: 2px dashed #c0c0c0;
   display: flex;
   justify-content: space-between;
 }
@@ -307,7 +394,7 @@ header img {
 }
 .home .content-pick .destination {
   width: 30%;
-  margin-bottom: 30px;
+  padding: 0 0 4%;
 }
 @media (max-width: 500px) {
   .home .content-pick .destination {
@@ -317,15 +404,17 @@ header img {
 .home .content-pick .destination div {
   background: darkcyan;
   color: white;
-  width: 80%;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 12px;
   padding: 4% 0;
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2.1vw;
 }
 @media (max-width: 500px) {
   .home .content-pick .destination div {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 12px;
+    padding: 2%;
+    font-size: 4vw;
   }
 }

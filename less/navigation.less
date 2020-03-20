@@ -3,7 +3,7 @@
   border-bottom: 2px dashed @navigation-border;
 
   .navBar {
-    @media @phone {
+    @media @mobile {
       .flex(column, center);
       align-items: center;
     }
@@ -13,8 +13,7 @@
     align-items: baseline;
 
     h1 {
-      @media @phone {
-        font-size: 3.2rem;
+      @media @mobile {
         padding: 2% 0;
       } // @phone
     } // h1
@@ -22,15 +21,21 @@
     nav {
       width: 45%;
       .flex(row, space-around);
-      @media @phone{
-          width:100%;
+      @media @mobile {
+        width: 100%;
       }
 
       a {
+        @media @mobile{
+            font-size:3.5vw;
+          }
         color: @shark;
         font-family: "Roboto", sans-serif;
-        font-size: 1.5rem;
+        font-size: 2.1vw;
         text-decoration: none;
+        &:hover {
+            .animate(0.1s, alternate, infinite, boom);
+          }
       } // a
     } // nav
   } // .navBar
