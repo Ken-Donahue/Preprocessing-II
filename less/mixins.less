@@ -1,1 +1,29 @@
 // Mixins in here
+.button(@bgColor, @fontColor) {
+  background: @bgColor;
+  color: @fontColor;
+  width: 100%;
+  border-radius: 12px;
+  padding: 4% 0;
+  text-align: center;
+  font-size: 2.1vw;
+}
+
+.flex(@direction:row, @justify) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+}
+
+.animate(@duration, @direction, @iteration,@name) {
+  @media (max-width:800px) {
+    animation-name: none;
+    transition:none;
+    padding:0;
+  }
+  animation-duration: @duration;
+  animation-fill-mode: @direction;
+  animation-iteration-count: @iteration;
+  animation-name: @name;
+  padding: 1%;
+}
